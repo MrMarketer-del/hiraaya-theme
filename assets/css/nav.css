@@ -1,0 +1,346 @@
+/* ── STICKY NAVIGATION BAR (CENTERED BRAND BLOCK) ───────────────── */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Slim header on load to place the logo on top left */
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0; /* Nav remains hidden during preloader Phase 1-4 */
+    visibility: hidden;
+    pointer-events: none;
+}
+
+nav.nav-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Scrolled/Sticky State */
+nav.scrolled {
+    background: rgba(61, 13, 23, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    height: 80px; /* Collapse to slim bar on scroll */
+    border-bottom: 1px solid rgba(184, 150, 46, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Sound toggle left, Burger right */
+}
+
+
+/* ── LEFT: BRAND LOGO BLOCK ─────────────────────────────────────── */
+.nav-brand-centered {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    pointer-events: auto;
+    transition: opacity 0.5s ease,
+                visibility 0.5s ease;
+}
+
+/* Line 1: Main Logotype */
+.brand-line-1 {
+    font-family: var(--font-primary);
+    font-size: 2.1rem;
+    font-weight: 300;
+    letter-spacing: 0.22em;
+    color: var(--color-white);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 6px;
+    transition: font-size 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                margin-bottom 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Line 2: Sub-headline */
+.brand-line-2 {
+    font-family: var(--font-ui);
+    font-size: 8.5px;
+    font-weight: 300;
+    letter-spacing: 0.45em;
+    color: var(--color-muted-gold);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 12px;
+    opacity: 1;
+    max-height: 20px;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                margin-bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Line 3: Est. + Monogram + Year */
+.brand-logo-monogram-wrap {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    transition: margin-bottom 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand-monogram-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Collapse styling when scrolled */
+nav.scrolled .brand-line-1 {
+    font-size: 1.35rem;
+    margin-bottom: 0;
+}
+
+nav.scrolled .brand-logo-monogram-wrap {
+    margin-bottom: 2px;
+}
+
+nav.scrolled .brand-monogram-img {
+    height: 26px;
+}
+
+/* ── RIGHT SIDE: HAMBURGER TOGGLE ────────────────────────────────── */
+.nav-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 12px; /* Slim 2-line design */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    pointer-events: auto;
+}
+
+.nav-burger span {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-white);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                opacity 0.3s ease;
+}
+
+.nav-burger.open span:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+}
+
+.nav-burger.open span:nth-child(2) {
+    transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* ── FULL SCREEN NAVIGATION OVERLAY ──────────────────────────────── */
+.nav-mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--color-burgundy);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Overlay Navigation Links list */
+.nav-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-mobile-menu li {
+    overflow: hidden;
+}
+
+.nav-mobile-menu .nav-link {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.4s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-mobile-menu .nav-link:hover {
+    color: var(--color-white);
+    letter-spacing: 0.18em;
+}
+
+.nav-mobile-menu .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 1px;
+    background: var(--color-light-blush);
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-mobile-menu .nav-link:hover::after {
+    width: 60%;
+}
+
+.nav-mobile-menu .nav-cta-btn {
+    margin-top: 24px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    border: 1px solid var(--color-light-blush);
+    padding: 14px 40px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-mobile-menu .nav-cta-btn:hover {
+    background: var(--color-light-blush);
+    color: var(--color-burgundy);
+    border-color: var(--color-light-blush);
+}
+
+/* ── WORDPRESS ADMIN BAR OFFSET STYLES ───────────────────────────── */
+body.admin-bar nav {
+    top: 32px;
+}
+
+body.admin-bar .nav-mobile-overlay {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    body.admin-bar nav {
+        top: 46px;
+    }
+    body.admin-bar .nav-mobile-overlay {
+        top: 46px;
+    }
+}
+
+/* ── MENU OPEN NAVBAR OVERRIDES ─────────────────────────────────── */
+nav.menu-open {
+    z-index: 1001;
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+nav.menu-open .nav-brand-centered {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Custom logo image styles */
+.brand-logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+nav.scrolled .brand-logo-img {
+    height: 50px;
+}
+
+/* ── RESPONSIVE STYLING ────────────────────────────────────────── */
+@media (max-width: 768px) {
+    nav {
+        height: 80px;
+    }
+    
+    nav.scrolled {
+        height: 70px;
+    }
+    
+    .nav-container {
+        padding: 0 24px;
+    }
+    
+    .brand-logo-img {
+        height: 50px;
+    }
+    nav.scrolled .brand-logo-img {
+        height: 40px;
+    }
+    
+    .brand-line-1 {
+        font-size: 1.35rem;
+        letter-spacing: 0.18em;
+    }
+    
+    .brand-logo-monogram-wrap {
+        margin-bottom: 4px;
+    }
+    
+    .brand-monogram-img {
+        height: 32px;
+    }
+    
+    nav.scrolled .brand-logo-monogram-wrap {
+        margin-bottom: 1px;
+    }
+    
+    nav.scrolled .brand-monogram-img {
+        height: 20px;
+    }
+    
+    nav.scrolled .brand-line-1 {
+        font-size: 1.1rem;
+    }
+    
+    .nav-burger {
+        width: 24px;
+        height: 10px;
+    }
+    
+    .nav-burger.open span:nth-child(1) {
+        transform: translateY(4.5px) rotate(45deg);
+    }
+    
+    .nav-burger.open span:nth-child(2) {
+        transform: translateY(-4.5px) rotate(-45deg);
+    }
+    
+    .nav-mobile-menu .nav-link {
+        font-size: 1.65rem;
+    }
+}

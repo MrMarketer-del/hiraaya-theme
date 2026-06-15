@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Hiraaya Luxury | Begin a Conversation</title>
+    <meta name="description" content="Get in touch with Hiraaya Luxury for brand strategy, India market entry, hospitality positioning, and luxury brand management conversations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/inner.css">
+</head>
+<body>
+
+    <!-- ══ LINE BACKGROUND WATERMARK ══════════════════════════════════ -->
+    <div style="position: fixed; inset: 0; z-index: -1; display: flex; align-items: center; justify-content: center; opacity: 0.02; pointer-events: none;">
+        <img src="assets/images/arch-watermark.svg" alt="Gold Arch Watermark Outline" style="height: 95%; width: auto;">
+    </div>
+
+
+    <!-- ═══ PRELOADER ANIMATION ════════════════════════════════════════ -->
+    <div id="hiraaya-preloader">
+        <div id="hiraaya-shimmer-bar" class="preloader-shimmer-bar"></div>
+        <div id="hiraaya-icon-wrap">
+            <img src="assets/images/logo.png" alt="Hiraaya Luxury Logo Monogram">
+        </div>
+    </div>
+
+    <!-- ═══ NAVIGATION BAR ════════════════════════════════════════════ -->
+    <nav id="navbar" class="nav-visible scrolled">
+        <div class="nav-container">
+            <!-- Left Corner: Brand Logo -->
+            <a href="index.html" class="nav-brand-centered" id="nav-logo">
+                <img class="brand-logo-img" src="assets/images/logo.png" alt="Hiraaya Luxury Logo">
+            </a>
+            
+            <!-- Right Corner: Hamburger Menu Button -->
+            <button class="nav-burger" id="burger" aria-label="Toggle Navigation Menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile/Full-screen Menu Overlay -->
+    <div class="nav-mobile-overlay" id="mobile-menu-overlay">
+        <div class="nav-overlay-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <ul class="nav-mobile-menu">
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="sectors.html" class="nav-link">Sectors</a></li>
+                <li><a href="perspective.html" class="nav-link">The Perspective</a></li>
+                <li><a href="work.html" class="nav-link">Work</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ═══ CONTACT HERO (CENTERED) ══════════════════════════════════ -->
+    <header class="inner-hero">
+        <div class="inner-hero-centered">
+            <div class="hero-content">
+                <p class="inner-hero-eyebrow reveal">Contact</p>
+                <h1 class="inner-hero-title reveal reveal-delay-1">Begin a conversation</h1>
+                <p class="inner-hero-subline reveal reveal-delay-2" style="margin: 0 auto;">We welcome thoughtful enquiries about luxury, brand strategy, and long-term collaboration. There is no standard intake process here. Just a conversation.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══ CONTACT FORM & DETAILS ═══════════════════════════════════ -->
+    <section class="section-padding" style="background: var(--color-cream);">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Left Panel: Form -->
+                <div class="contact-form-container reveal">
+                    <h3 class="form-intro-text">Tell us a little about what you are thinking.</h3>
+                    
+                    <form action="#" method="POST" id="inquiry-form">
+                        <!-- Field 1: Name -->
+                        <div class="form-group">
+                            <label for="input-name" class="form-label">Your Name</label>
+                            <input type="text" id="input-name" class="form-control" required autocomplete="name">
+                        </div>
+
+                        <!-- Field 2: Organisation -->
+                        <div class="form-group">
+                            <label for="input-org" class="form-label">Organisation or Brand</label>
+                            <input type="text" id="input-org" class="form-control" autocomplete="organization">
+                        </div>
+
+                        <!-- Field 3: Dropdown -->
+                        <div class="form-group">
+                            <label for="input-nature" class="form-label">Nature of Enquiry</label>
+                            <select id="input-nature" class="form-control">
+                                <option value="strategy">Brand Strategy</option>
+                                <option value="entry">India Market Entry</option>
+                                <option value="hospitality">Hospitality Positioning</option>
+                                <option value="realestate">Real Estate</option>
+                                <option value="media">Press or Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Field 4: Textarea -->
+                        <div class="form-group">
+                            <label for="input-message" class="form-label">What are you thinking about?</label>
+                            <textarea id="input-message" class="form-control" rows="4" required placeholder="A short note about what you are exploring is enough to get us started."></textarea>
+                        </div>
+
+                        <!-- Field 5: Email -->
+                        <div class="form-group">
+                            <label for="input-email" class="form-label">Your Email</label>
+                            <input type="email" id="input-email" class="form-control" required autocomplete="email">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-outline btn-outline-navy" style="width: 100%; padding: 16px; margin-top: 10px;">Begin the Conversation</button>
+
+                        <p class="form-privacy-note">We do not share your information with anyone. We respond to every serious enquiry personally.</p>
+                    </form>
+                </div>
+
+                <!-- Right Panel: Address details -->
+                <div class="contact-details-block reveal reveal-delay-1" style="padding-left: 20px;">
+                    
+                    <!-- Company Profile -->
+                    <div style="margin-bottom: 48px;">
+                        <h4 style="font-family: var(--font-primary); font-size: 2.2rem; color: var(--color-burgundy); text-transform: uppercase; letter-spacing: 0.1em; line-height: 1.1; margin-bottom: 8px;">Hiraaya</h4>
+                        <p style="font-family: var(--font-ui); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-muted-gold); margin-bottom: 24px;">Luxury · Brand Management House</p>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="contact-details-item">
+                        <h5 class="contact-details-label">Office Coordinates</h5>
+                        <p class="contact-details-value">
+                            MZ 02, Ansals Fortune Arcade,<br>
+                            Sector 18, Noida, Uttar Pradesh, India
+                        </p>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="contact-details-item">
+                        <h5 class="contact-details-label">Direct Email</h5>
+                        <p class="contact-details-value">
+                            <a href="mailto:parth@hiraayaluxury.com" style="color: var(--color-light-blush); font-weight: 500;">parth@hiraayaluxury.com</a>
+                        </p>
+                    </div>
+
+                    <!-- Connect -->
+                    <div class="contact-details-item">
+                        <h5 class="contact-details-label">Digital Presence</h5>
+                        <p class="contact-details-value">
+                            <a href="https://www.hiraayaluxury.com" style="display: block; margin-bottom: 4px;">www.hiraayaluxury.com</a>
+                            <a href="https://www.instagram.com/hiraayaluxury/" target="_blank" rel="noopener">@hiraayaluxury</a>
+                        </p>
+                    </div>
+
+                    <!-- Closing Statement -->
+                    <div style="border-top: 1px solid rgba(184, 150, 46, 0.25); padding-top: 36px; margin-top: 48px;">
+                        <p style="font-family: var(--font-primary); font-size: 1.4rem; font-style: italic; color: var(--color-burgundy); line-height: 1.5;">
+                            "We cultivate presence, foster relationships, and build legacies of enduring luxury."
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════ -->
+    <footer style="background: var(--color-burgundy); padding: 100px 0 40px; color: rgba(255, 255, 255, 0.7); position: relative; overflow: hidden;">
+        <div class="footer-watermark" style="position: absolute; bottom: -40px; right: 8%; width: 380px; opacity: 0.08; pointer-events: none; z-index: 1;">
+            <img src="assets/images/arch-watermark.svg" alt="Hiraaya Arch Watermark" style="width: 100%; height: auto; filter: none;">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr; gap: 64px; padding-bottom: 64px; border-bottom: 1px solid rgba(184, 150, 46, 0.15); text-align: left;">
+                <div>
+                    <h4 style="color: var(--color-white); font-family: var(--font-primary); font-size: 2rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;">Hiraaya</h4>
+                    <p style="font-family: var(--font-ui); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-gold); margin-bottom: 24px;">Luxury · Brand Management House</p>
+                    <p style="font-family: var(--font-ui); font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.45); max-width: 380px; font-style: italic;">
+                        "Where the path of refinement is illuminated by luxury"
+                    </p>
+                </div>
+                <div>
+                    <h5 style="color: var(--color-white); font-family: var(--font-ui); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;">Navigate</h5>
+                    <ul class="footer-links-list" style="list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 13px; padding: 0;">
+                        <li><a href="about.html" style="color: rgba(255,255,255,0.55);">About</a></li>
+                        <li><a href="services.html" style="color: rgba(255,255,255,0.55);">Services</a></li>
+                        <li><a href="sectors.html" style="color: rgba(255,255,255,0.55);">Sectors</a></li>
+                        <li><a href="perspective.html" style="color: rgba(255,255,255,0.55);">The Perspective</a></li>
+                        <li><a href="contact.html" style="color: rgba(255,255,255,0.55);">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 style="color: var(--color-white); font-family: var(--font-ui); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;">Connect</h5>
+                    <p style="font-family: var(--font-ui); font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.55); margin-bottom: 16px;">
+                        MZ 02, Ansals Fortune Arcade, Sector 18, Noida, Uttar Pradesh, India
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; padding: 0;">
+                        <li><a href="mailto:parth@hiraayaluxury.com" style="color: var(--color-gold); transition: opacity 0.3s;">parth@hiraayaluxury.com</a></li>
+                        <li><a href="https://www.hiraayaluxury.com" style="color: var(--color-gold); transition: opacity 0.3s;">www.hiraayaluxury.com</a></li>
+                        <li><a href="https://www.instagram.com/hiraayaluxury/" style="color: rgba(255,255,255,0.55); transition: opacity 0.3s;" target="_blank" rel="noopener">@hiraayaluxury</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 36px; font-size: 12px; color: rgba(255, 255, 255, 0.25); font-family: var(--font-ui);">
+                <p>© 2026 Hiraaya Luxury. All rights reserved.</p>
+                <div style="display: flex; gap: 24px;">
+                    <a href="https://www.instagram.com/hiraayaluxury/" target="_blank" rel="noopener">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/js/preloader.js"></script>
+    <script type="module" src="assets/js/nav.js"></script>
+    <script type="module" src="assets/js/contact.js"></script>
+</body>
+</html>

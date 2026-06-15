@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+    <!-- Outer Arch Frame Border -->
+    <rect x="80" y="80" width="640" height="840" fill="none" stroke="#B8962E" stroke-width="1.5" opacity="0.6" />
+    <rect x="90" y="90" width="620" height="820" fill="none" stroke="#B8962E" stroke-width="0.75" stroke-dasharray="4,4" opacity="0.4" />
+    
+    <!-- Outer Gate Frame -->
+    <path d="M 150,900 L 150,300 C 150,180 260,120 400,120 C 540,120 650,180 650,300 L 650,900" fill="none" stroke="#B8962E" stroke-width="2" />
+    
+    <!-- Symmetrical Left Pillar -->
+    <g stroke="#B8962E" stroke-width="1.5" fill="none">
+        <line x1="150" y1="900" x2="150" y2="400" />
+        <line x1="190" y1="900" x2="190" y2="420" />
+        <!-- Pillar Capital Details -->
+        <rect x="140" y="400" width="60" height="20" />
+        <path d="M 140,400 Q 170,370 200,400" />
+    </g>
+    
+    <!-- Symmetrical Right Pillar -->
+    <g stroke="#B8962E" stroke-width="1.5" fill="none">
+        <line x1="650" y1="900" x2="650" y2="400" />
+        <line x1="610" y1="900" x2="610" y2="420" />
+        <!-- Pillar Capital Details -->
+        <rect x="600" y="400" width="60" height="20" />
+        <path d="M 600,400 Q 630,370 660,400" />
+    </g>
+    
+    <!-- Detailed Scalloped (Multifoil) Arch Path -->
+    <path d="M 190,900 
+             L 190,460 
+             C 190,420 220,380 250,380 
+             C 270,380 290,360 290,330 
+             C 290,300 320,260 360,260 
+             C 380,260 395,245 400,220 
+             C 405,245 420,260 440,260 
+             C 480,260 510,300 510,330 
+             C 510,360 530,380 550,380 
+             C 580,380 610,420 610,460 
+             L 610,900" 
+          fill="none" stroke="#B8962E" stroke-width="2" />
+
+    <!-- Inner Secondary Thin Arch Path -->
+    <path d="M 210,900 
+             L 210,470 
+             C 210,440 235,400 260,400 
+             C 280,400 300,380 300,350 
+             C 300,320 330,280 370,280 
+             C 390,280 398,265 400,245 
+             C 402,265 410,280 430,280 
+             C 470,280 500,320 500,350 
+             C 500,380 520,400 540,400 
+             C 565,400 590,440 590,470 
+             L 590,900" 
+          fill="none" stroke="#B8962E" stroke-width="1" opacity="0.7" />
+          
+    <!-- Decorative Medallions (Spandrel details) -->
+    <circle cx="270" cy="190" r="16" fill="none" stroke="#B8962E" stroke-width="1" />
+    <circle cx="270" cy="190" r="12" fill="none" stroke="#B8962E" stroke-width="0.5" stroke-dasharray="2,2" />
+    <path d="M 270,174 L 270,206 M 254,190 L 286,190" stroke="#B8962E" stroke-width="0.75" />
+    
+    <circle cx="530" cy="190" r="16" fill="none" stroke="#B8962E" stroke-width="1" />
+    <circle cx="530" cy="190" r="12" fill="none" stroke="#B8962E" stroke-width="0.5" stroke-dasharray="2,2" />
+    <path d="M 530,174 L 530,206 M 514,190 L 546,190" stroke="#B8962E" stroke-width="0.75" />
+    
+    <!-- Central Dome Skyline/Detail above the frame -->
+    <path d="M 320,80 Q 400,30 480,80" fill="none" stroke="#B8962E" stroke-width="1.5" />
+    <path d="M 350,80 Q 400,45 450,80" fill="none" stroke="#B8962E" stroke-width="0.75" />
+    <line x1="400" y1="38" x2="400" y2="15" stroke="#B8962E" stroke-width="1.5" />
+    <circle cx="400" cy="12" r="3" fill="#B8962E" />
+</svg>

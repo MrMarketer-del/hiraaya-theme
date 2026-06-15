@@ -1,0 +1,13 @@
+{
+  "name": "hiraaya-theme-prototype",
+  "version": "1.0.0",
+  "description": "Interactive prototype for Hiraaya Luxury Website and Custom WordPress Theme",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

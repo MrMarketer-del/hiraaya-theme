@@ -1,0 +1,239 @@
+/*
+Theme Name: Hiraaya Theme
+Theme URI: https://hiraayaevents.com/
+Author: Adsclique Media Private Limited
+Author URI: https://www.adsclique.com/
+Description: A premium luxury custom theme for Hiraaya Luxury, featuring refined typography, immersive custom layouts, and highly smooth custom transitions and animations.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: hiraaya-theme
+*/
+
+/* ── DESIGN SYSTEM TOKENS ────────────────────────────────────────── */
+:root {
+    --color-burgundy: #3D0D17;      /* Cherry Deep - Primary brand, headings, preloader, CTAs */
+    --color-light-blush: #6B1A2A;   /* Cherry Mid - Hover states, secondary backgrounds */
+    --color-muted-gold: #B8962E;    /* Gold - Eyebrows, dividers, borders, CTA outlines */
+    --color-cream: #F9F5EE;         /* Ivory/Cream - Page backgrounds, light section fills */
+    --color-white: #FFFFFF;
+    --color-gold: #D4AF55;          /* Gold Light - Headings on dark backgrounds, logo text */
+    --color-dark-burgundy: #3D0D17; /* Cherry Deep - Deepest backgrounds and footer overlay */
+    --color-text-body: #1A1008;     /* Primary body text dark charcoal/brown */
+    --color-muted-text: #7A6548;    /* Muted Text - secondary, captions, sub-labels */
+
+    /* Typography */
+    --font-primary: 'Cormorant Garamond', Georgia, serif;
+    --font-secondary: 'Cormorant Garamond', Georgia, serif;
+    --font-ui: 'Jost', sans-serif;
+    
+    /* Layout */
+    --container-max: 1440px;
+    --nav-height-desktop: 80px;
+    --nav-height-mobile: 64px;
+}
+
+/* ── RESET & BASE STYLES ─────────────────────────────────────────── */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    background: var(--color-cream);
+    color: var(--color-text-body);
+    font-family: var(--font-ui);
+    font-weight: 400;
+    line-height: 1.8;
+    overflow-x: hidden;
+    opacity: 0; /* Managed by preloader JS to avoid FOUC */
+    transition: opacity 0.5s ease;
+}
+
+/* Subtly textures the site to give it a premium physical/parchment quality */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.015;
+    pointer-events: none;
+    z-index: 999999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+/* ── TYPOGRAPHY UTILITIES ────────────────────────────────────────── */
+h1 {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    color: var(--color-burgundy);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    font-family: var(--font-primary);
+    font-weight: 300;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--color-light-blush);
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    font-style: italic; /* Subheadings default to Cormorant Garamond Italic in blueprint */
+}
+
+h3 {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: clamp(1.15rem, 2vw, 1.375rem);
+    color: var(--color-light-blush);
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+}
+
+.font-serif-italic {
+    font-family: var(--font-secondary);
+    font-style: italic;
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-uppercase-ui {
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ── GLOBAL CONTAINER & UTILITIES ────────────────────────────────── */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 72px;
+}
+
+.section-padding {
+    padding: 140px 0;
+}
+
+.eyebrow-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: var(--color-muted-gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.eyebrow-label::before {
+    content: '';
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--color-muted-gold);
+}
+
+/* Flat horizontal dividers */
+.divider-line {
+    border: none;
+    border-top: 1px solid rgba(184, 150, 46, 0.3);
+    width: 100%;
+}
+
+/* Global button styles */
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-muted-gold);
+    background: transparent;
+    border: 1px solid var(--color-muted-gold);
+    padding: 14px 32px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: var(--color-muted-gold);
+    color: var(--color-burgundy);
+}
+
+.btn-outline-navy {
+    color: var(--color-burgundy);
+    border-color: var(--color-burgundy);
+}
+
+.btn-outline-navy:hover {
+    background: var(--color-burgundy);
+    color: var(--color-white);
+}
+
+/* ── RESPONSIVE PADDING ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 28px;
+    }
+    .section-padding {
+        padding: 88px 0;
+    }
+}
+
+/* ── SCROLL REVEAL ANIMATIONS ────────────────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+.reveal-delay-4 { transition-delay: 0.6s; }

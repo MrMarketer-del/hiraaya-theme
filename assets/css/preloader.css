@@ -1,0 +1,63 @@
+/* ── PRELOADER OVERLAY ───────────────────────────────────────────── */
+#hiraaya-preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--color-burgundy);
+    z-index: 99999;
+    transition: transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+#hiraaya-preloader.fade-out {
+    transform: translateY(-100%);
+}
+
+/* Monogram Logo Wrapper - Centered inside preloader curtain */
+#hiraaya-icon-wrap {
+    position: absolute;
+    z-index: 100000;
+    pointer-events: none;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 125px;
+    transform: translate(-50%, -50%) scale(0.9);
+    transform-origin: center center;
+    transition: opacity 0.7s ease, 
+                transform 1.0s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#hiraaya-icon-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Shimmer Progress Bar at the bottom */
+.preloader-shimmer-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.preloader-shimmer-bar.loading {
+    animation: shimmer-load 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer-load {
+    0% {
+        width: 0%;
+        left: 0%;
+    }
+    100% {
+        width: 100%;
+        left: 0%;
+    }
+}
+
+

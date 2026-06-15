@@ -1,0 +1,515 @@
+
+
+HIRAAYA LUXURY
+Website Blueprint & WordPress Implementation Guide
+
+Prepared by Adsclique Media Private Limited
+For Parth Gupta, Founder | Hiraaya Luxury
+Confidential | June 2026
+
+"Where the path of refinement is illuminated by luxury"
+
+
+01 | BRAND IDENTITY & VISUAL DIRECTION
+Palette, Typography & Signature Design Element
+The Hiraaya Luxury website must express one clear visual position: Indian-luxury-meets-global-refinement. This means drawing on cultural depth while avoiding anything that reads as ornate or overtly decorative. The palette, type, and layout all work toward the same goal.
+
+Colour Palette
+Colour
+Hex Code
+Usage
+Cherry Deep
+#3D0D17
+Primary backgrounds, hero sections, footer, section headers
+Cherry Mid
+#6B1A2A
+Hover states, secondary backgrounds, left-border accents
+Gold
+#B8962E
+Eyebrow labels, dividers, borders, CTA outlines
+Gold Light
+#D4AF55
+Headings on dark backgrounds, logo text, decorative accents
+Ivory / Cream
+#F9F5EE
+Page background, light section fills
+Muted Text
+#7A6548
+Body text secondary, captions, sub-labels
+
+Typography System
+Role
+Typeface
+Application
+Display / H1
+Cormorant Garamond
+Page heroes, section titles, founder quote
+H2 / Subheadings
+Cormorant Garamond Italic
+Sub-section titles, pull quotes, callouts
+Body / Navigation
+Jost Regular
+All body text, nav links, form fields, buttons
+Eyebrows / Labels
+Jost Light (tracked)
+Section labels, category tags, meta text
+
+LOADING GOOGLE FONTS (WORDPRESS)
+In WordPress, load both fonts via Appearance > Customize > Additional CSS or enqueue in functions.php: @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap');
+
+Signature Design Element
+The single most distinctive visual element on the Hiraaya website will be a custom Indian architectural line illustration used as a watermark-opacity background layer in hero sections and the footer. This could be a Mughal arch, the Gateway of India in line art, or a Rajasthan haveli silhouette rendered as a thin gold SVG at 8-12% opacity. No competitor in this space uses this device. It signals cultural rootedness without being decorative or clichéd.
+ILLUSTRATION DIRECTION
+Commission a freelance illustrator to produce 2-3 architectural line-art SVGs: one arch/gateway, one palace skyline, one interior archway. These will be reused across Home hero, About hero, and the footer. Budget: one-time asset.
+
+02 | COMPETITIVE LANDSCAPE
+Where Hiraaya Stands Among Peers
+The following six websites represent the closest competitive set for Hiraaya Luxury. Understanding what each does and where they fall short informs every design and content decision on the Hiraaya site.
+
+Competitor
+Website
+Their Positioning
+Gap Hiraaya Fills
+Karla Otto
+karlaotto.com
+Global luxury comms, fashion-first, Euro-centric
+India-rooted perspective, hospitality-led thinking
+The Independents
+the-independents.com
+Creative collective, editorial-heavy, Paris-led
+Strategy depth, structured service offering
+HM Luxury Consultancy
+hmluxuryconsultancy.com
+India-focused, personal brand-driven approach
+More institutional, covers broader sector range
+Luxury Connect
+luxuryconnect.in
+Events and networking-focused platform
+Deeper ongoing brand management capability
+One Rep Global
+onerepglobal.com
+Tourism and brand representation hybrid
+Broader luxury ecosystem perspective
+Creative.co
+creativeco.in
+Creative boutique for social/digital
+Strategy and positioning over execution
+
+POSITIONING CONCLUSION
+None of the Indian competitors presents themselves as a pure luxury brand management house with genuine philosophical depth and cultural articulation. Hiraaya's opportunity is to occupy this space clearly: not an agency, not a network, not a creative boutique. A strategic firm for luxury.
+
+03 | SITE ARCHITECTURE & PAGE STRUCTURE
+Complete Sitemap
+The Hiraaya website will launch in two phases. Phase 1 covers the six core pages. Phase 2 adds editorial depth and the Journal. The navigation should never exceed six items.
+
+Phase 1 Launch Pages (Weeks 1-6)
+Page
+WordPress Slug
+Purpose
+Home
+/
+First impression, philosophy in brief, service teaser, CTA
+About
+/about
+Founder story, firm philosophy, values, approach narrative
+Services
+/services
+All 6 service pillars with focus areas and descriptions
+Sectors
+/sectors
+5 sector pages: Fashion, Hospitality, Real Estate, Indian Brands, International
+Work
+/work
+Selected engagements / collaborations (anonymized if needed)
+Contact
+/contact
+Minimal form, address, email, Instagram link
+
+Phase 2 Pages (Months 2-3)
+Page
+WordPress Slug
+Purpose
+The Perspective
+/perspective
+Hiraaya's editorial POV on modern luxury: market data, insight pieces
+Journal
+/journal
+Rolling editorial content, 300-600 word pieces, 1 per month minimum
+
+WORDPRESS RECOMMENDATION
+Use Elementor Pro for page building — it gives full design control without coding. Install WPForms Lite for the contact form. Use Yoast SEO for meta optimisation. Theme base: Astra or Hello Elementor (both lightweight and compatible). Child theme recommended if any custom PHP is required.
+
+04 | PAGE-BY-PAGE LAYOUT BLUEPRINTS
+Home Page
+WORDPRESS TEMPLATE: FRONT PAGE
+Section 1 — Navigation (Sticky Header)
+The navigation bar is transparent on load and transitions to Cherry Deep (#3D0D17) on scroll. Logo: the H monogram + HIRAAYA LUXURY wordmark in Cormorant Garamond, gold. Links: About, Services, Sectors, The Perspective, Contact — Jost Light, uppercase, tracked, ivory. No dropdown menus on desktop. On mobile: collapse to H monogram + hamburger icon, open full-screen overlay in cherry-deep with gold links.
+
+Section 2 — Hero
+Full-bleed height: 100vh. Background: dark photographic image of an Indian heritage interior or archway, with a deep cherry-red colour overlay at 70% opacity. Centred content:
+	•	Eyebrow text: LUXURY BRAND MANAGEMENT (gold, tracked caps, Jost)
+	•	Headline (H1): Where the path of refinement is illuminated by luxury (Cormorant Garamond, ivory, 64-72px desktop)
+	•	Sub-line: A strategic luxury brand management house. India-rooted. Globally aware. (Jost, 16px, ivory 70% opacity)
+	•	CTA Button: Discover Hiraaya (outlined, gold border, gold text, no fill — hover fills gold, text turns cherry)
+	•	Scroll indicator: thin vertical line with a downward-moving dot in gold at bottom centre
+
+HERO WORDPRESS NOTES
+Use Elementor Full-Height section. Background image layer + colour overlay layer stacked. Animate headline text with Elementor Motion Effects: fade-up on load, 0.3s delay. For the scroll indicator, use a custom HTML widget with a small CSS animation.
+
+Section 3 — Philosophy Strip (Dark Band)
+Full-width section, cherry-deep background. 3 columns with a thin gold vertical divider between them. Each column:
+	•	Gold icon (SVG or from Flaticon luxury set)
+	•	Heading: Refinement over Excess / Experience over Consumption / Culture over Mass Attention
+	•	2-line descriptor below each heading in Jost, ivory at 70%
+
+Section 4 — About the Firm (Split Section)
+50/50 split. Left side: ivory background. Right side: image (architectural photo or editorial still life). Left content:
+	•	Eyebrow: A STRATEGIC LUXURY BRAND MANAGEMENT HOUSE
+	•	H2: Cultivating meaning in a world of excess
+	•	2 short paragraphs from the brand profile, tightened for web
+	•	CTA: "Learn Our Approach" — text link with arrow, links to /about
+
+Section 5 — Services Teaser (3-Card Grid)
+Ivory background. Heading: What We Do. Show 3 of the 6 services: Brand Positioning, India Market Entry, Hospitality & Experiential. Each card: thin gold border, icon top, service name, one-line description, no CTA on individual cards. Below grid: See All Services (outlined cherry button).
+
+Section 6 — Sector Strip
+Dark cherry background. 5 equally spaced sector labels with a thin gold divider between: Luxury Fashion / Hospitality / Real Estate / Indian Brands / International Brands. On hover, each label gets a gold underline. Desktop: horizontal row. Mobile: 2-column grid.
+
+Section 7 — Founder Quote
+Full-width, cherry-deep background. Centred. Large decorative quotation marks in gold at 20% opacity behind the text. Quote text in Cormorant Garamond italic, ivory, 28px. Attribution below: Parth Gupta, Founder, Hiraaya Luxury — in Jost, gold, small caps.
+"Meaningful luxury is rarely created through visibility alone. It is cultivated through perception, relationships, refinement, experience, and enduring emotional relevance."  — Parth Gupta, Founder
+
+Section 8 — Collaboration CTA
+Ivory background. Centred text: "Let's build enduring presence together." Below: outlined button — Begin a Conversation — links to /contact.
+
+Section 9 — Footer
+Cherry-deep background. Three columns: 1) H monogram + tagline in gold italic. 2) Navigation links repeated. 3) Contact info: address, email, website, Instagram handle. Bottom bar: thin gold rule, then copyright line in ivory small text.
+
+
+About Page
+WORDPRESS TEMPLATE: PAGE — FULL WIDTH
+Section 1 — Page Hero
+Split background: left 60% cherry-deep, right 40% architectural image. Left side: eyebrow 'About Hiraaya Luxury', H2 'A Strategic Luxury Brand Management House', one-line sub. No CTA on this hero.
+
+Section 2 — The Firm (Prose)
+Ivory background. Full-width text in Jost, 17px, generous line-height (1.8). 3 short paragraphs: what Hiraaya is, how it operates, what it seeks to build. Pulled and tightened from the brand PDF. No bullet lists here — this section should read as a considered paragraph, not a capabilities list.
+
+Section 3 — Our Approach (6 Values Grid)
+Cherry-deep background. 2-row x 3-column grid of value cards. Each card: ivory/dark background contrast, gold icon at top, value name in Cormorant Garamond, one-line description in Jost. Values:
+	•	Strategic — Insight-driven strategies for meaningful brand positioning
+	•	Relationship-Oriented — Building long-term associations based on trust and mutual value
+	•	Experience-Led — Crafting experiences that create emotional resonance and lasting impact
+	•	Globally Aware — A global perspective with deep sensitivity toward local culture and context
+	•	Rooted in Heritage — Respecting traditions while shaping contemporary luxury narratives
+	•	Focused on Excellence — Committed to refinement, quality, and enduring brand relevance
+
+Section 4 — Founder
+50/50 split. Left: Parth Gupta photograph or editorial portrait. Right: ivory background. Eyebrow: PARTH GUPTA, FOUNDER. H2: A philosophy built on refinement. 2 paragraphs in Jost body. His quote below in Cormorant Garamond italic, gold. This section must not read like a bio — it should read like a founder's considered statement.
+
+Section 5 — The Hiraaya Philosophy Wheel
+Visual diagram built in CSS or SVG (not an image so it scales cleanly). Central H monogram in a dark cherry circle. 6 spokes extending outward, each ending in a labelled gold circle: Refinement, Experience, Culture, Hospitality, Identity, Long-Term Value. Ivory background. No animation — static on desktop, readable on mobile as a stacked list fallback.
+
+ELEMENTOR BUILD NOTE
+Build the philosophy wheel as a custom HTML/CSS widget or use a third-party Elementor plugin like 'Jet Elements' for circular layouts. If SVG is used, ensure viewBox is responsive and text labels are legible at mobile widths.
+
+
+Services Page
+WORDPRESS TEMPLATE: PAGE — FULL WIDTH
+This page presents all 6 Hiraaya service pillars. Each service alternates layout direction (left-right, right-left) on desktop for visual rhythm. On mobile all stack as single columns.
+
+Service 01 — Luxury Brand Positioning & Identity Development
+Description: Refining brand perception, positioning, and long-term luxury relevance through strategic alignment, aesthetic sensitivity, and market-oriented identity development.
+Focus Areas:
+	•	Luxury positioning strategy
+	•	Brand identity refinement
+	•	Consumer perception alignment
+	•	Premium market relevance
+	•	Long-term brand value orientation
+
+Service 02 — India Market Entry & Luxury Ecosystem Development
+Description: Supporting international and emerging luxury brands in understanding India's evolving premium landscape through culturally aware and strategically informed market orientation.
+Focus Areas:
+	•	India luxury ecosystem understanding
+	•	Strategic city and market orientation
+	•	Consumer and cultural sensitivity
+	•	Premium retail and hospitality landscape awareness
+	•	Market development perspective
+
+Service 03 — Hospitality & Experiential Luxury Strategy
+Description: Interpreting luxury through hospitality-driven thinking, refined environments, emotional engagement, and experience-led consumer interaction.
+Focus Areas:
+	•	Luxury hospitality understanding
+	•	Experience-led positioning
+	•	Guest journey sensitivity
+	•	Experiential luxury concepts
+	•	Consumer engagement environments
+
+Service 04 — Strategic Brand Representation & Long-Term Associations
+Description: Facilitating thoughtful collaborations, industry relationships, and strategic associations across luxury, hospitality, lifestyle, and allied premium sectors.
+Focus Areas:
+	•	Strategic brand representation
+	•	Industry and luxury ecosystem relationships
+	•	Long-term partnership orientation
+	•	Cross-sector collaborations
+	•	Brand association development
+
+Service 05 — Luxury Communication, PR & Market Presence
+Description: Supporting refined storytelling, perception-building, and strategic visibility across evolving physical and digital luxury environments.
+Focus Areas:
+	•	Luxury communication direction
+	•	Brand storytelling and perception
+	•	PR and strategic visibility sensitivity
+	•	Premium consumer-facing alignment
+	•	Digital luxury presence awareness
+
+Service 06 — Luxury Lifestyle, Retail & Premium Real Estate Alignment
+Description: Exploring opportunities across luxury retail environments, hospitality ecosystems, premium real estate, lifestyle ventures, and experiential spaces.
+Focus Areas:
+	•	Luxury retail understanding
+	•	Premium real estate ecosystem awareness
+	•	Lifestyle and experiential alignment
+	•	High-value consumer environment sensitivity
+	•	Luxury space positioning perspective
+
+"Meaningful luxury presence is cultivated through strategy, refinement, cultural understanding, and enduring relationships."
+
+Sectors Page
+WORDPRESS TEMPLATE: PAGE — FULL WIDTH
+This page presents the 5 sectors where Hiraaya operates. Consider using an accordion layout on this page — each sector expands to reveal its full description and focus areas, keeping the page clean without hiding content from search engines.
+
+Sector 1 — Luxury Fashion & Accessories
+Exploring opportunities across luxury fashion, accessories, leather goods, watches, jewellery, writing instruments, and premium lifestyle brands seeking refined market presence and long-term positioning.
+Includes:
+	•	Luxury fashion houses
+	•	Accessories and leather goods
+	•	Watches and jewellery
+	•	Writing instruments
+	•	Premium lifestyle brands
+
+Sector 2 — Hospitality & Experiential Luxury
+Supporting hospitality-driven luxury environments where guest experience, emotional engagement, refined service, and experiential value shape long-term brand perception.
+Includes:
+	•	Luxury hotels and resorts
+	•	Boutique hospitality concepts
+	•	Wellness and retreat experiences
+	•	Experiential travel and tourism
+	•	Curated guest experiences
+
+Sector 3 — Luxury Real Estate & Premium Spaces
+Understanding the growing importance of architecture, spatial identity, premium environments, and high-value lifestyle ecosystems within modern luxury markets.
+Includes:
+	•	Premium real estate developments
+	•	Luxury residences and lifestyle spaces
+	•	Hospitality-integrated projects
+	•	Experience-led environments
+	•	Luxury commercial ecosystems
+
+Sector 4 — Emerging Indian Luxury Brands
+Encouraging culturally rooted and globally aware Indian luxury concepts seeking refined positioning, strategic direction, and long-term market relevance.
+Includes:
+	•	Heritage-inspired luxury ventures
+	•	Contemporary Indian premium brands
+	•	Artisanal and design-led concepts
+	•	Premium lifestyle ventures
+	•	Culturally rooted luxury positioning
+
+Sector 5 — International Brands Exploring India
+Supporting international luxury brands interested in understanding India's evolving premium consumer landscape through strategic orientation and culturally aware market sensitivity.
+Includes:
+	•	India market understanding
+	•	Premium consumer orientation
+	•	Strategic ecosystem perspective
+	•	Luxury retail and hospitality awareness
+	•	Long-term market positioning insight
+
+The Perspective Page
+WORDPRESS TEMPLATE: PAGE — FULL WIDTH + BLOG ARCHIVE
+This is the page that will differentiate Hiraaya from every competitor. It presents the firm as a thinking organisation with a point of view on modern luxury. Launch this page with one long-form piece minimum before going live.
+
+Page Intro Section
+Eyebrow: THE HIRAAYA PERSPECTIVE. H1: A curated outlook on modern luxury. 2-sentence intro: how Hiraaya sees luxury evolving and why they write about it.
+
+Data Strip (3 Statistics)
+Dark cherry background. 3 large-number stats from the brand PDF research, set as oversized numerals in Cormorant Garamond gold, with a label below in Jost ivory. Sources cited underneath each stat.
+	•	70% of younger luxury consumers in India value experiences and personalisation over products (Source: Deloitte 2023)
+	•	55% of India's luxury consumers are below the age of 40 (Source: Hurun India 2023)
+	•	Hospitality and experiences are among the top 3 growth segments in India's luxury ecosystem (Source: Knight Frank 2023)
+
+Traditional vs Modern Luxury Comparison
+2-column visual: Traditional Luxury vs Modern Luxury, shown as a clean table or side-by-side strip. Pulled directly from the brand PDF. Cherry background for the 'Traditional' column header, gold for 'Modern'.
+Traditional Luxury
+Modern Luxury
+Ownership
+Experience
+Visibility
+Meaning
+Status
+Identity
+Consumption
+Emotional Connection
+Excess
+Refinement
+Product-Centric
+Experience-Led
+Transactional
+Relationship-Oriented
+Mass Prestige
+Cultural Relevance
+
+Journal Articles Section
+Below the main perspective content, a 3-column grid of Journal article cards. Each card: category tag (e.g. LUXURY INDIA), article title in Cormorant Garamond, 2-line excerpt in Jost, Read More link in gold. Use WordPress standard blog archive functionality for this, filtered by the 'Journal' category.
+
+Work Page
+WORDPRESS TEMPLATE: PAGE — FULL WIDTH
+Title this page 'Selected Engagements' not 'Our Work' or 'Portfolio'. Frame every case as a collaboration, not a client assignment. In early stages, cases can be anonymised by sector without naming the brand.
+
+Engagement Card Format
+Each engagement card includes:
+	•	Sector Tag: e.g. Luxury Hospitality, Indian Premium Brand (gold pill label at top left)
+	•	Engagement Title: a descriptive headline, not the client name
+	•	2-3 line summary of the brief and what Hiraaya contributed
+	•	Outcome: one line on result or direction achieved
+	•	Optional: city / market context
+
+IF EARLY STAGE
+If confirmed engagement case studies are not yet available, replace this page section with 'Areas of Engagement' — showing sectors and types of work Hiraaya is actively pursuing. This is more honest than placeholder content and still builds positioning.
+
+Contact Page
+WORDPRESS TEMPLATE: PAGE — NO SIDEBAR
+The Contact page should feel as refined as the rest of the site. No generic 'Send us a message' headings. Minimal fields. Clear intent.
+
+Page Copy
+"We welcome thoughtful conversations about luxury, brand strategy, and long-term collaboration."
+
+Inquiry Form Fields (WPForms)
+	•	Full Name (required)
+	•	Organisation / Brand (required)
+	•	Nature of Inquiry: dropdown — Brand Strategy / India Market Entry / Hospitality / Real Estate / Press / Other
+	•	Brief message (required, 3-line textarea)
+	•	Email Address (required)
+	•	Submit button label: Begin the Conversation
+
+Contact Details Block
+Hiraaya Luxury — Luxury Brand Management
+MZ 02, Ansals Fortune Arcade, Sector 18, Noida, Uttar Pradesh, India
+parth@hiraayaluxury.com
+www.hiraayaluxury.com
+@hiraayaluxury (Instagram)
+
+05 | CONTENT VOICE & WRITING RULES
+How Hiraaya Sounds on the Website
+Every word on the Hiraaya site is design material. The copy must be as deliberate as the colour palette. The following rules govern all web copy — for headers, body text, CTAs, form labels, and even error messages.
+
+Words to Use
+	•	Refinement, presence, perception, enduring, cultivate
+	•	Collaborators or partners (not clients)
+	•	Engagements (not projects or campaigns)
+	•	Experience-led, relationship-driven, culturally aware
+	•	Strategic, considered, long-term, thoughtful
+
+Words to Avoid Entirely
+	•	Agency, full-service agency, digital marketing, social media
+	•	Campaigns, deliverables, metrics, ROI, conversions
+	•	Client (use collaborator or partner), portfolio (use selected engagements)
+	•	Leverage, synergies, comprehensive solutions, end-to-end
+	•	Delve, holistic, game-changer, cutting-edge, innovative
+
+Sentence Style Rules
+	•	Short and declarative in hero sections: one idea per sentence
+	•	No bullet lists in About or hero sections — prose only
+	•	Active voice throughout: never 'luxury is cultivated by us' — always 'we cultivate luxury'
+	•	No em dashes anywhere on the site
+	•	No AI-sounding language or filler phrases
+	•	Sentence case for all headings — never all-caps headings in body content (eyebrows excepted)
+	•	Edit every sentence for weight: if it can be cut, cut it
+
+Tone Adjectives
+Considered — not showy. Warm — not cold. Authoritative — not arrogant. Indian-rooted and globally fluent. Philosophical — not academic.
+
+06 | WORDPRESS BUILD SPECIFICATIONS
+Technical Setup & Plugin Stack
+Recommended WordPress Stack
+Component
+Recommendation
+Reason
+Base Theme
+Hello Elementor
+Blank slate, no bloat, fully Elementor-compatible
+Page Builder
+Elementor Pro
+Full design control, Global Colours/Fonts, motion effects
+Contact Form
+WPForms Lite
+Clean UI, reliable, styled easily in Elementor
+SEO
+Yoast SEO
+Meta control, schema, sitemap generation
+Performance
+WP Rocket or LiteSpeed Cache
+Image lazy load, CSS minification, page caching
+Image Optimisation
+ShortPixel or Smush
+Compress without visible quality loss
+Security
+Wordfence
+Firewall, malware scan, login protection
+Analytics
+MonsterInsights (GA4)
+Google Analytics 4 without code editing
+
+Elementor Global Settings
+Set these in Elementor > Site Settings before building any pages:
+	•	Primary Colour: #3D0D17 (Cherry Deep)
+	•	Secondary Colour: #B8962E (Gold)
+	•	Text Colour: #1A1008
+	•	Accent Colour: #D4AF55 (Gold Light)
+	•	Default Font: Jost (Body), Cormorant Garamond (Headings)
+	•	H1: Cormorant Garamond, 60px desktop / 36px mobile, colour #3D0D17
+	•	H2: Cormorant Garamond, 40px desktop / 28px mobile, colour #6B1A2A
+	•	H3: Jost Medium, 22px, colour #6B1A2A
+	•	Body: Jost Regular, 16px, line-height 1.8, colour #1A1008
+
+Custom CSS for Global Styles
+Add the following in Elementor > Custom CSS or Appearance > Additional CSS:
+/* Hiraaya CTA Button Style */
+.elementor-button { border: 1px solid #B8962E !important; background: transparent !important; color: #B8962E !important; letter-spacing: 0.12em; font-family: 'Jost', sans-serif; text-transform: uppercase; font-size: 12px; padding: 14px 32px; border-radius: 0; }
+.elementor-button:hover { background: #B8962E !important; color: #3D0D17 !important; }
+
+Navigation Setup
+Appearance > Menus. Create 'Primary Menu' with pages: Home, About, Services, Sectors, The Perspective, Contact. In Elementor, use the Nav Menu widget in the header template. Set sticky behaviour via Elementor Motion Effects on the header section: scroll effect — sticky on scroll. Transparency setting on the first page section should be set to Transparent so the nav overlays the hero.
+
+Performance & SEO Notes
+	•	All hero images: WebP format, max 800KB, minimum 1920x1080px
+	•	Architectural SVG illustrations: inline SVG preferred over img tags for scalability
+	•	Cormorant Garamond and Jost: load via Google Fonts with preconnect in header
+	•	All pages must have unique meta titles and descriptions set in Yoast
+	•	Schema markup: Organisation schema on homepage, Person schema on About (Parth Gupta)
+	•	Sitemap: submit to Google Search Console after launch
+	•	Mobile: test all pages at 375px, 414px, and 768px widths in Elementor responsive editor
+
+07 | BUILD PHASES & TIMELINE
+Recommended Rollout
+Phase
+Timeline
+Pages / Deliverables
+Priority
+Phase 1 — Launch
+Weeks 1-6
+Home, About, Services, Sectors, Work (2-3 cases), Contact
+CRITICAL — go live
+Phase 2 — Depth
+Months 2-3
+The Perspective page, 3 Journal articles, expanded Work
+Authority building
+Phase 3 — Growth
+Ongoing
+Monthly Journal, gated PDF insight report, LinkedIn cross-posts
+Long-term SEO + leads
+
+HIGHEST IMPACT AT LAUNCH
+The single most valuable thing Hiraaya can publish at launch is one deeply written, 800-word 'Perspective' piece on what modern luxury means in India in 2026. That piece, shared on LinkedIn by Parth, positions the firm before any sales conversation begins. It is more valuable than 10 Instagram posts.
+
+
+Prepared by Adsclique Media Private Limited
+For Hiraaya Luxury | Parth Gupta, Founder
+Naveen | Adsclique Media | June 2026
