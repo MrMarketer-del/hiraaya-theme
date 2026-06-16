@@ -197,35 +197,61 @@ function hiraaya_theme_setup() {
 add_action( 'after_setup_theme', 'hiraaya_theme_setup' );
 
 /**
+ * Return a cache-busting version based on the actual asset file.
+ */
+function hiraaya_asset_version( $relative_path ) {
+    $file_path = get_template_directory() . $relative_path;
+
+    if ( file_exists( $file_path ) ) {
+        return (string) filemtime( $file_path );
+    }
+
+    return '1.0.0';
+}
+
+/**
+ * Match WordPress menu anchor markup to the static HTML navigation classes.
+ */
+function hiraaya_nav_menu_link_attributes( $atts, $menu_item, $args ) {
+    if ( empty( $args->theme_location ) ) {
+        return $atts;
+    }
+
+    if ( 'primary-menu' === $args->theme_location ) {
+        $atts['class'] = empty( $atts['class'] ) ? 'nav-link' : $atts['class'] . ' nav-link';
+    }
+
+    return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'hiraaya_nav_menu_link_attributes', 10, 3 );
+
+/**
  * Enqueue scripts and styles.
  */
 function hiraaya_enqueue_scripts() {
-    // Theme version
-    $version = '1.0.0';
-
     // Global theme stylesheet
-    wp_enqueue_style( 'hiraaya-global-style', get_stylesheet_uri(), array(), $version );
+    wp_enqueue_style( 'hiraaya-global-style', get_stylesheet_uri(), array(), hiraaya_asset_version( '/style.css' ) );
 
     // Enqueue preloader, navbar, and homepage specific stylesheets
-    wp_enqueue_style( 'hiraaya-preloader-style', get_template_directory_uri() . '/assets/css/preloader.css', array('hiraaya-global-style'), $version );
-    wp_enqueue_style( 'hiraaya-nav-style', get_template_directory_uri() . '/assets/css/nav.css', array('hiraaya-global-style'), $version );
+    wp_enqueue_style( 'hiraaya-preloader-style', get_template_directory_uri() . '/assets/css/preloader.css', array( 'hiraaya-global-style' ), hiraaya_asset_version( '/assets/css/preloader.css' ) );
+    wp_enqueue_style( 'hiraaya-nav-style', get_template_directory_uri() . '/assets/css/nav.css', array( 'hiraaya-preloader-style' ), hiraaya_asset_version( '/assets/css/nav.css' ) );
     
     if ( is_front_page() || is_home() ) {
-        wp_enqueue_style( 'hiraaya-homepage-style', get_template_directory_uri() . '/assets/css/homepage.css', array('hiraaya-global-style'), $version );
+        wp_enqueue_style( 'hiraaya-homepage-style', get_template_directory_uri() . '/assets/css/homepage.css', array( 'hiraaya-nav-style' ), hiraaya_asset_version( '/assets/css/homepage.css' ) );
     } else {
-        wp_enqueue_style( 'hiraaya-inner-style', get_template_directory_uri() . '/assets/css/inner.css', array('hiraaya-global-style'), $version );
+        wp_enqueue_style( 'hiraaya-inner-style', get_template_directory_uri() . '/assets/css/inner.css', array( 'hiraaya-nav-style' ), hiraaya_asset_version( '/assets/css/inner.css' ) );
     }
 
     // Enqueue Javascript modules
-    wp_enqueue_script( 'hiraaya-preloader-script', get_template_directory_uri() . '/assets/js/preloader.js', array(), $version, true );
-    wp_enqueue_script( 'hiraaya-nav-script', get_template_directory_uri() . '/assets/js/nav.js', array(), $version, true );
+    wp_enqueue_script( 'hiraaya-preloader-script', get_template_directory_uri() . '/assets/js/preloader.js', array(), hiraaya_asset_version( '/assets/js/preloader.js' ), true );
+    wp_enqueue_script( 'hiraaya-nav-script', get_template_directory_uri() . '/assets/js/nav.js', array(), hiraaya_asset_version( '/assets/js/nav.js' ), true );
     
     if ( is_page_template( 'page-sectors.php' ) ) {
-        wp_enqueue_script( 'hiraaya-sectors-script', get_template_directory_uri() . '/assets/js/sectors.js', array(), $version, true );
+        wp_enqueue_script( 'hiraaya-sectors-script', get_template_directory_uri() . '/assets/js/sectors.js', array(), hiraaya_asset_version( '/assets/js/sectors.js' ), true );
     }
 
     if ( is_page_template( 'page-contact.php' ) ) {
-        wp_enqueue_script( 'hiraaya-contact-script', get_template_directory_uri() . '/assets/js/contact.js', array(), $version, true );
+        wp_enqueue_script( 'hiraaya-contact-script', get_template_directory_uri() . '/assets/js/contact.js', array(), hiraaya_asset_version( '/assets/js/contact.js' ), true );
     }
 }
 add_action( 'wp_enqueue_scripts', 'hiraaya_enqueue_scripts' );

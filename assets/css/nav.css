@@ -195,12 +195,27 @@ nav.scrolled .brand-monogram-img {
     transition: color 0.4s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-mobile-menu .nav-link:hover {
+.nav-mobile-menu .menu-item a {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.4s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-mobile-menu .nav-link:hover,
+.nav-mobile-menu .menu-item a:hover {
     color: var(--color-white);
     letter-spacing: 0.18em;
 }
 
-.nav-mobile-menu .nav-link::after {
+.nav-mobile-menu .nav-link::after,
+.nav-mobile-menu .menu-item a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -212,7 +227,8 @@ nav.scrolled .brand-monogram-img {
     transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav-mobile-menu .nav-link:hover::after {
+.nav-mobile-menu .nav-link:hover::after,
+.nav-mobile-menu .menu-item a:hover::after {
     width: 60%;
 }
 
@@ -341,6 +357,10 @@ nav.scrolled .brand-logo-img {
     }
     
     .nav-mobile-menu .nav-link {
+        font-size: 1.65rem;
+    }
+
+    .nav-mobile-menu .menu-item a {
         font-size: 1.65rem;
     }
 }

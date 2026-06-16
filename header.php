@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     
-    <!-- Load Cormorant Garamond / Outfit fallbacks in head for text elements -->
+    <!-- Load Cormorant Garamond / Jost fallbacks in head for text elements -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <?php wp_head(); ?>
 </head>
@@ -17,14 +17,12 @@
 
 
     <!-- ═══ PRELOADER ANIMATION ════════════════════════════════════════ -->
-    <?php if ( is_front_page() && ! isset( $_COOKIE['hiraaya_preloaded'] ) ) : ?>
     <div id="hiraaya-preloader">
         <div id="hiraaya-shimmer-bar" class="preloader-shimmer-bar"></div>
         <div id="hiraaya-icon-wrap">
             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.png" alt="Hiraaya Luxury Logo Monogram">
         </div>
     </div>
-    <?php endif; ?>
 
     <!-- ═══ NAVIGATION BAR ════════════════════════════════════════════ -->
     <nav id="navbar" class="<?php echo ( ! is_front_page() ) ? 'nav-visible scrolled' : ''; ?>">
@@ -54,6 +52,5 @@
                 'depth'          => 1,
             ) );
             ?>
-            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="nav-cta-btn" style="margin-top: 40px; font-family: var(--font-ui); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-white); border: 1px solid var(--color-light-blush); padding: 12px 32px;">Begin Your Journey</a>
         </div>
     </div>

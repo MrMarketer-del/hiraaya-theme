@@ -37,6 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                         'theme_location' => 'footer-menu',
                         'container'      => false,
                         'menu_class'     => 'footer-links-list',
+                        'menu_id'        => false,
                         'fallback_cb'    => false,
                         'depth'          => 1,
                     ) );
