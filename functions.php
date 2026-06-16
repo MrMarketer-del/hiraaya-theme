@@ -152,23 +152,14 @@ function hiraaya_ensure_primary_menu( $page_ids = array() ) {
 }
 
 /**
- * Keep the static conversion pages available on activation and first deploy.
+ * Create converted static pages only when the theme is activated.
  */
-function hiraaya_bootstrap_static_pages() {
-    $bootstrap_version = '2026-06-16-1';
-
-    if ( get_option( 'hiraaya_static_pages_bootstrapped' ) === $bootstrap_version ) {
-        return;
-    }
-
+function hiraaya_create_static_pages_on_activation() {
     $page_ids = hiraaya_ensure_required_pages();
     hiraaya_ensure_primary_menu( $page_ids );
     flush_rewrite_rules();
-
-    update_option( 'hiraaya_static_pages_bootstrapped', $bootstrap_version );
 }
-add_action( 'init', 'hiraaya_bootstrap_static_pages' );
-add_action( 'after_switch_theme', 'hiraaya_bootstrap_static_pages' );
+add_action( 'after_switch_theme', 'hiraaya_create_static_pages_on_activation' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
