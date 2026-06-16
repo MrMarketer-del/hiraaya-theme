@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         Parth Gupta or our senior advisory team will contact you directly within 24 hours to coordinate a private conversation.
                     </p>
                     
-                    <a href="index.html" class="btn-outline btn-outline-navy" style="padding: 12px 36px; font-size: 11px; letter-spacing: 2px;">Return to Hiraaya</a>
+                    <a href="/" class="btn-outline btn-outline-navy" style="padding: 12px 36px; font-size: 11px; letter-spacing: 2px;">Return to Hiraaya</a>
                 </div>
             `;
             

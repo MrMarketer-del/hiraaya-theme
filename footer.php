@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                     <h5 style="color: var(--color-white); font-family: var(--font-ui); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;">Navigate</h5>
                     <?php
                     wp_nav_menu( array(
-                        'theme_location' => 'primary-menu',
+                        'theme_location' => 'footer-menu',
                         'container'      => false,
                         'menu_class'     => 'footer-links-list',
                         'fallback_cb'    => false,

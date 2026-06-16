@@ -54,6 +54,6 @@
                 'depth'          => 1,
             ) );
             ?>
-            <a href="<?php echo esc_url( home_url( '/begin-your-journey/' ) ); ?>" class="nav-cta-btn" style="margin-top: 40px; font-family: var(--font-ui); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-white); border: 1px solid var(--color-light-blush); padding: 12px 32px;">Begin Your Journey</a>
+            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="nav-cta-btn" style="margin-top: 40px; font-family: var(--font-ui); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--color-white); border: 1px solid var(--color-light-blush); padding: 12px 32px;">Begin Your Journey</a>
         </div>
     </div>
